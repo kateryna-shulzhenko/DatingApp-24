@@ -4,7 +4,7 @@ import {provideAnimations} from '@angular/platform-browser/animations';
 
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
-import { provideToastr } from '@angular/platform-browser/animations';
+import { provideToastr } from 'ngx-toastr';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,7 +16,4 @@ export const appConfig: ApplicationConfig = {
     })
   ]
 };
-function provideToastr(arg0: { positionClass: string; }): import("@angular/core").Provider | import("@angular/core").EnvironmentProviders {
-  throw new Error('Function not implemented.');
-}
 
