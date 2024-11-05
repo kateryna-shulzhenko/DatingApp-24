@@ -36,10 +36,11 @@ public class UserRepository(DataContext context, IMapper mapper) : IUserReposito
         .SingleOrDefaultAsync(x => x.UserName == username);
     }
 
-    public async Task<IEnumerable<AppUser>> GetUsersAsync()
+    public async Task<IEnumerable<MemberDTO>> GetUsersAsync()
     {
         return await context.Users
             .Include(x => x.Photos)
+            .ProjectTo<MemberDTO>(mapper.ConfigurationProvider)
             .ToListAsync();
     }
 
