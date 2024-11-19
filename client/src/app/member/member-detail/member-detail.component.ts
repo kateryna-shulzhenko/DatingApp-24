@@ -13,10 +13,11 @@ import { GalleryItem, GalleryModule, ImageItem } from 'ng-gallery';
   styleUrl: './member-detail.component.css'
 })
 export class MemberDetailComponent implements OnInit{
+  member?: Member
+  images: GalleryItem[] = [];
+
   private memberService = inject(MembersService);
   private route = inject(ActivatedRoute);
-  member?: Member;
-  images: GalleryItem[] = [];
 
   ngOnInit(): void {
       this.loadMember();
